@@ -1,6 +1,6 @@
 require 'selenium-webdriver'
 
-describe 'Signup fail' do
+describe 'login fail' do
    
  before(:each) do
  @driver = Selenium::WebDriver.for :firefox
@@ -11,7 +11,7 @@ describe 'Signup fail' do
  end
    
 #case login fails
- it 'failed to signup' do
+ it 'failed to login' do
  @driver.get 'https://todo-sample-app.herokuapp.com'
  @driver.find_element(id: 'user_email').send_keys('notauser@fgt')
  @driver.find_element(id: 'user_password').send_keys('password')
@@ -21,7 +21,7 @@ describe 'Signup fail' do
  #THIS did not work@driver.find_element(class: 'alert').display? should be_true
  end
 
-it 'failed to signup2' do
+ it 'failed to login2' do
  @driver.get 'https://todo-sample-app.herokuapp.com'
  @driver.find_element(id: 'user_email').send_keys('jeannieteo78@gmail.com')
  @driver.find_element(id: 'user_password').send_keys('')
