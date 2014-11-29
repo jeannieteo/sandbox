@@ -68,11 +68,11 @@ describe 'login pass' do
    @driver.find_element(id: 'new_user').submit
    @driver.find_element(class: "notice").text.should eql("Signed in successfully.")
    @driver.find_element(tag_name: "div").text.should eql("Hi Friend (jeannieteo78@gmail.com),")
-   
+   @driver.find_element(tag_name: "h2").text.should eql("Your todo list")
    end
    
   it 'click on logout' do 
-  @driver.get 'https://todo-sample-app.herokuapp.com'
+  @driver.get @base_url
   @driver.find_element(id: 'user_email').send_keys('jeannieteo@gmail.com')
   @driver.find_element(id: 'user_password').send_keys('11111111')
   @driver.find_element(id: 'new_user').submit
@@ -81,4 +81,16 @@ describe 'login pass' do
   @driver.find_element(:link, "Logout").click
   @driver.find_element(tag_name: "div").text.should eql("log out successful")
    end
+   
+  it 'click on New Task' do 
+    @driver.get @base_url
+    @driver.find_element(id: 'user_email').send_keys('jeannieteo@gmail.com')
+    @driver.find_element(id: 'user_password').send_keys('11111111')
+    @driver.find_element(id: 'new_user').submit
+    @driver.find_element(class: "notice").text.should eql("Signed in successfully.")
+    @driver.find_element(tag_name: "div").text.should eql("Hi Friend (jeannieteo@gmail.com),")
+    @driver.find_element(:link, "New Task").click
+    @driver.find_element(tag_name: "div").text.should eql("Hi Friend (jeannieteo@gmail.com),")
+    @driver.find_element(tag_name: "h1").text.should eql("New Task")  
+     end
 end
