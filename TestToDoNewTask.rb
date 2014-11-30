@@ -3,14 +3,14 @@ require 'selenium-webdriver'
 describe 'add new task' do
      
    before(:each) do
-   @driver = Selenium::WebDriver.for :firefox
-   @base_url = "https://todo-sample-app.herokuapp.com"
-   @driver.get @base_url
+     @driver = Selenium::WebDriver.for :firefox
+     @base_url = "https://todo-sample-app.herokuapp.com"
+     @driver.get @base_url
    
    end
      
    after(:each) do
-   @driver.quit
+     @driver.quit
    end
 
  it 'put in more than 100 chars in new task' do 
@@ -22,7 +22,7 @@ describe 'add new task' do
     @driver.find_element(id: 'task_description').send_keys('X1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111')
     @driver.find_element(id: 'new_task').submit
      #expect the new task to fail
-   @driver.find_elements(xpath: "html/body/table[1]/tbody/tr").size.should == taskcount
+    @driver.find_elements(xpath: "html/body/table[1]/tbody/tr").size.should == taskcount
 
   end
    

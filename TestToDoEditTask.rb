@@ -3,16 +3,16 @@ require 'selenium-webdriver'
 describe 'add new task' do
    
    before(:each) do
-   @driver = Selenium::WebDriver.for :firefox
-   @base_url = "https://todo-sample-app.herokuapp.com"
-   @driver.get @base_url
-   @driver.find_element(id: 'user_email').send_keys('jeannieteo@gmail.com')
-   @driver.find_element(id: 'user_password').send_keys('11111111')
-   @driver.find_element(id: 'new_user').submit
+     @driver = Selenium::WebDriver.for :firefox
+     @base_url = "https://todo-sample-app.herokuapp.com"
+     @driver.get @base_url
+     @driver.find_element(id: 'user_email').send_keys('jeannieteo@gmail.com')
+     @driver.find_element(id: 'user_password').send_keys('11111111')
+     @driver.find_element(id: 'new_user').submit
    end
      
    after(:each) do
-   @driver.quit
+     @driver.quit
    end
 
  it 'click on edit to edit task' do 
