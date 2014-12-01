@@ -16,7 +16,7 @@ describe 'SignUp success' do
  @driver.find_element(id: "user_password").send_keys('11111111')
  @driver.find_element(id: "user_password_confirmation").send_keys('11111111')
  @driver.find_element(id: 'new_user').submit
- @driver.find_element(class: "notice").text.should eql("Welcome! You have signed up successfully.")
+ expect(@driver.find_element(class: "notice").text).to eq("Welcome! You have signed up successfully.")
  checkthis = @driver.find_element(class: "alert")
  checkthis.find_element(tag_name: "div").text.should eql("Hi Friend (teahouse@yahoo.com),")
  end
