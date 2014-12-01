@@ -18,7 +18,7 @@ describe 'SignUp success' do
  @driver.find_element(id: 'new_user').submit
  @driver.find_element(class: "notice").text.should eql("Welcome! You have signed up successfully.")
  checkthis = @driver.find_element(class: "alert")
- checkthis.find_element(tag_name: "div").text.should eql("Hi Friend (teahouse@yahoo.com), ")
+ checkthis.find_element(tag_name: "div").text.should eql("Hi Friend (teahouse@yahoo.com),")
  end
 
  it '2. signup theonetoplay@gmail.com' do
@@ -29,6 +29,6 @@ describe 'SignUp success' do
   @driver.find_element(id: 'new_user').submit
   @driver.find_element(class: "notice").text.should eql("Welcome! You have signed up successfully.")
   checkthis = @driver.find_element(class: "alert")
-  checkthis.find_element(tag_name: "div").text.should eql("Hi Friend (theonetoplay@gmail.com), ")
+  checkthis.find_element(tag_name: "div").text.should eql("Hi Friend (theonetoplay@gmail.com),")
   end
 end
