@@ -1,4 +1,15 @@
 sandbox
+------
+This is for playing around my assignment.
+test the https://todo-sample-app.herokuapp.com/
+I am using Ruby and selenium  web driver and rspec 
+Add Signup class for use in TestToDoSignUp_spec.rb and TestToDoSignUperror_spec.rb 
+The 2 cases in TestToDoSignup_spec.rb will still fail because I used invalid Email address.
+not sure if I should keep adding users. Anyway if I add them once I will need to change the signup again. maybe I should just RANDOM the user_email.
+
+Add the Spec_helper, but only login is using it for now.
+
+
 =======
 loaded the first rb script RPEC works. 
 C:\Users\teome>RSPEC C:\Users\teome\jeannie\ruby_jeannie\testTodo_login.rb
