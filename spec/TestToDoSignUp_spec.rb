@@ -1,20 +1,13 @@
 #filename : TestToDoSignup_spec.rb
 
-#require "spec_helper"
-require 'selenium-webdriver'
+require "spec_helper"
 require_relative "../Signup"
 describe 'SignUp' do
  
  before(:each) do
- @driver = Selenium::WebDriver.for :firefox
  @Signup = Signup.new(@driver)
  end
-
- after(:each) do
- @driver.quit
- end
-
-   
+  
  it '1. signup ' do
  @Signup.with('new@user', '11111111','11111111' )
  expect(@driver.find_element(class: "notice").text).to eq("Welcome! You have signed up successfully.")

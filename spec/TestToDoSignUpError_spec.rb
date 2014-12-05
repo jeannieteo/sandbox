@@ -1,20 +1,13 @@
 #filename : TestToDoSignUpError_spec.rb
 
-#require "spec_helper"
-require 'selenium-webdriver'
+require "spec_helper"
 require_relative "../Signup"
 
 describe 'SignUp_errors' do
  
  before(:each) do
- @driver = Selenium::WebDriver.for :firefox
  @Signup = Signup.new(@driver)
  end
-
- after(:each) do
- @driver.quit
- end
-
    
 it '1. fail to signup - ALL BLANK' do
    @Signup.with('', '','' )
@@ -33,7 +26,7 @@ it '1. fail to signup - ALL BLANK' do
 it '3. fail to signup -password blank' do
  	@Signup.with('unique@gmail.com', '','' )
     checkthis = @driver.find_element(id: "error_explanation")
- 	expect(checkthis.find_element(tag_name: "h2").text).to eq('1 error prohibited this user from being saved:')
+ 	  expect(checkthis.find_element(tag_name: "h2").text).to eq('1 error prohibited this user from being saved:')
    	expect(checkthis.find_element(tag_name: "ul").text).to eq("Password can\'t be blank")
  end
 
