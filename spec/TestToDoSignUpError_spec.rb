@@ -65,4 +65,26 @@ it '3. fail to signup -password blank' do
     expect(checkthis.find_element(tag_name: "ul").text).to eq("Email has already been taken")
     #puts checkthis.find_element(tag_name: "ul").tex
  end
+it '8. fail to signup invalid email no ".com"' do
+  @Signup.with('eric_ross@gmail', '11111111','11111111' )
+    checkthis = @driver.find_element(id: "error_explanation")
+    expect(checkthis.find_element(tag_name: "h2").text).to eq('1 error prohibited this user from being saved:')
+    #puts checkthis.find_element(tag_name: "h2").text    
+    expect(checkthis.find_element(tag_name: "ul").text).to eq("Email is invalid")
+    #puts checkthis.find_element(tag_name: "ul").tex
+ end
+ #THERE IS NO ALERT, what is that balloon??
+ #it '9. fail to signup - invalid email 2@@' do
+ # @Signup.with('eric_ross@@gmail.com', '1111111122','1111111122' )
+ # alert = @wait.until {@driver.switch_to.alert}
+ # expect(alert.text).to eq('Please enter an email address.')
+ #end
+
+#it '10. fail to signup - invalid email no @' do
+ # @Signup.with('eric_rossgmail.com', '1111111122','1111111122' )
+ # alert = @wait.until {@driver.switch_to.alert}
+ # expect(alert.text).to eq('Please enter an email address.')
+# end
+
+
 end
